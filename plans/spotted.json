@@ -1937,6 +1937,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/native.py\tNative read handout stops being valid JSON when the agent line is full\tFORGE-TOOLS-1/READS",
+      "kind": "bug",
+      "path": "src/forge/native.py",
+      "line": 68,
+      "text": "Native read handout stops being valid JSON when the agent line is full",
+      "from": "blocking",
+      "item": "FORGE-TOOLS-1/READS",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/nextstep.py\tDo not report an exited worker as building while tests run\tboard-data-truth",
       "kind": "bug",
       "path": "src/forge/nextstep.py",
@@ -5123,6 +5134,39 @@
       "text": "The generated host coordinator skills already lag behind unrelated template guidance, which this fix leaves unchanged.",
       "from": "worker",
       "item": "runner-setting",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/templates/brief.md\tNot done: Resolve conflicting fix-round directions\tworker-brief-faster",
+      "kind": "bug",
+      "path": "src/forge/templates/brief.md",
+      "line": 254,
+      "text": "Not done: Resolve conflicting fix-round directions",
+      "from": "blocking",
+      "item": "worker-brief-faster",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/templates/brief.md\tNot done: The worker brief does not end with the reviewer's checklist on resumed rounds\tworker-brief-faster",
+      "kind": "bug",
+      "path": "src/forge/templates/brief.md",
+      "line": 264,
+      "text": "Not done: The worker brief does not end with the reviewer's checklist on resumed rounds",
+      "from": "blocking",
+      "item": "worker-brief-faster",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/worker.py\tNot done: The worker brief names the plan's files and related tests, tells the worker not to read the coordinator guide, answers 'separate'\tworker-brief-faster",
+      "kind": "bug",
+      "path": "src/forge/worker.py",
+      "line": 464,
+      "text": "Not done: The worker brief names the plan's files and related tests, tells the worker not to read the coordinator guide, answers 'separate'",
+      "from": "blocking",
+      "item": "worker-brief-faster",
       "status": "open",
       "closed_by": null
     },
