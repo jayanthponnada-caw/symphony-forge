@@ -959,7 +959,12 @@ def _title(top: Path, item: str, state: dict[str, Any]) -> tuple[str, str, str]:
         why, summary = doc.get("Why", ""), row.get("what it delivers", "")
     else:
         why, summary = state.get("why", ""), state.get("done_when", "")
-        title = re.split(r"[,;:.!?]", why, maxsplit=1)[0][:70]
+        # The first sentence: it ends at . ! or ? (and any closing quote or bracket) before a
+        # space or the end, never in v1.2.10. The closing quote or bracket stays.
+        first = re.split(r"[.!?]([\"')\]]?)(?=\s|$)", why, maxsplit=1)
+        title = " ".join("".join(first[:2]).split())
+        if len(title) > 70:  # a title the owner reads at a glance; no space: a hard cut
+            title = title[:title.rfind(" ", 0, 71) if " " in title[:71] else 70].rstrip(",;:.!?")
     return " ".join(title.split()) or item, " ".join(why.split()), " ".join(summary.split())
 
 
