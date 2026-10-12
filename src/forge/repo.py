@@ -620,7 +620,7 @@ def route(cfg: dict[str, Any], tool: str, *, command: str, item: str) -> str:
 
 def design_models(cfg: dict[str, Any], family: str) -> dict[str, str]:
     """The design model for a family, including the default in older repos."""
-    return cfg["models"].get("design", {}).get(family, DESIGN_DEFAULTS[family])
+    return cfg.get("models", {}).get("design", {}).get(family, DESIGN_DEFAULTS[family])
 
 
 def _models_problem(table: Any) -> str:
@@ -691,7 +691,16 @@ def check_pin(cwd: str | os.PathLike[str] | None = None, item: str = "", words: 
     top = Path(done.stdout.strip())
     if done.returncode or not (top / "forge.toml").is_file():
         return
-    pinned = config(top)["version"].removeprefix("v")
+    pinned = ""
+    if words == "handback" and ITEM.fullmatch(item):
+        from forge import codex
+        # A build round's hand-back runs on the release its checkout pinned when it was handed out,
+        # before reading a forge.toml the round may have broken, which the hand-back restores.
+        pending = codex._json(codex._item_file(top, item, ".json", "Build")).get("pending") or {}
+        if pending.get("head"):
+            handed = run("git", "show", f"{pending['head']}:forge.toml", cwd=pending["checkout"])
+            pinned = _pin(handed.stdout)
+    pinned = pinned or config(top)["version"].removeprefix("v")
     if pinned == __version__:
         return
     from forge import story
