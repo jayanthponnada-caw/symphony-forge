@@ -1156,17 +1156,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\tsrc/forge/codex.py\tNot done: forge sync refreshes generated files while other items' work or land runs, and waits for or skips only what that run actually has,\tsync-not-blocked",
-      "kind": "bug",
-      "path": "src/forge/codex.py",
-      "line": 336,
-      "text": "Not done: forge sync refreshes generated files while other items' work or land runs, and waits for or skips only what that run actually has,",
-      "from": "blocking",
-      "item": "sync-not-blocked",
-      "status": "done",
-      "closed_by": "dismissed"
-    },
-    {
       "key": "bug\tsrc/forge/codex.py\tNot done: the latest step through every worker path\tFORGE-MOD-1/LIVE",
       "kind": "bug",
       "path": "src/forge/codex.py",
@@ -1174,17 +1163,6 @@
       "text": "Not done: the latest step through every worker path",
       "from": "blocking",
       "item": "FORGE-MOD-1/LIVE",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/codex.py\tOld-release runs leave skipped chats only in local records\tsync-not-blocked",
-      "kind": "bug",
-      "path": "src/forge/codex.py",
-      "line": 329,
-      "text": "Old-release runs leave skipped chats only in local records",
-      "from": "blocking",
-      "item": "sync-not-blocked",
       "status": "open",
       "closed_by": null
     },
@@ -1959,6 +1937,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/native.py\tNative read handout stops being valid JSON when the agent line is full\tFORGE-TOOLS-1/READS",
+      "kind": "bug",
+      "path": "src/forge/native.py",
+      "line": 68,
+      "text": "Native read handout stops being valid JSON when the agent line is full",
+      "from": "blocking",
+      "item": "FORGE-TOOLS-1/READS",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/nextstep.py\tDo not report an exited worker as building while tests run\tboard-data-truth",
       "kind": "bug",
       "path": "src/forge/nextstep.py",
@@ -2113,6 +2102,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/review.py\tChunked reviews record only the last pass's token use\trecord-review-usage",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 753,
+      "text": "Chunked reviews record only the last pass's token use",
+      "from": "blocking",
+      "item": "record-review-usage",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/review.py\tConcurrent closes can lose a temporary Git object while a local review clone copies it; the CI suite failed and the focused local command cases pass.",
       "kind": "bug",
       "path": "src/forge/review.py",
@@ -2120,6 +2120,17 @@
       "text": "Concurrent closes can lose a temporary Git object while a local review clone copies it; the CI suite failed and the focused local command cases pass.",
       "from": "worker",
       "item": "stacked-fix-count",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/review.py\tNot done: Every review and plan read records its model, effort, chat id and token use in Forge's run records, the same way worker rounds do\trecord-review-usage",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 598,
+      "text": "Not done: Every review and plan read records its model, effort, chat id and token use in Forge's run records, the same way worker rounds do",
+      "from": "blocking",
+      "item": "record-review-usage",
       "status": "open",
       "closed_by": null
     },
@@ -2197,6 +2208,17 @@
       "text": "New cold-read notes can be lost when a settled note repeats",
       "from": "blocking",
       "item": "settled-stays-settled",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/story.py\tNot done: Every review and plan read records its model, effort, chat id and token use in Forge's run records, the same way worker rounds do\trecord-review-usage",
+      "kind": "bug",
+      "path": "src/forge/story.py",
+      "line": 944,
+      "text": "Not done: Every review and plan read records its model, effort, chat id and token use in Forge's run records, the same way worker rounds do",
+      "from": "blocking",
+      "item": "record-review-usage",
       "status": "open",
       "closed_by": null
     },
@@ -3235,6 +3257,28 @@
       "closed_by": null
     },
     {
+      "key": "bug\ttests/test_fix_reviews_and_reads_record_their_cost.py\tNot done: earlier-adopted repo review and plan-read cost test\trecord-review-usage",
+      "kind": "bug",
+      "path": "tests/test_fix_reviews_and_reads_record_their_cost.py",
+      "line": 101,
+      "text": "Not done: earlier-adopted repo review and plan-read cost test",
+      "from": "blocking",
+      "item": "record-review-usage",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_fix_reviews_and_reads_record_their_cost.py\tNot done: native plan read run-record test\trecord-review-usage",
+      "kind": "bug",
+      "path": "tests/test_fix_reviews_and_reads_record_their_cost.py",
+      "line": 88,
+      "text": "Not done: native plan read run-record test",
+      "from": "blocking",
+      "item": "record-review-usage",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\ttests/test_fix_tests_test_codex_worker_py_test_4_turn_l_2.py\tA Windows CI worker timed out in the failed Codex work call; its cause remains unknown.",
       "kind": "bug",
       "path": "tests/test_fix_tests_test_codex_worker_py_test_4_turn_l_2.py",
@@ -3816,50 +3860,6 @@
       "item": "simplify-ci-workflow",
       "status": "done",
       "closed_by": "several-tests-fail-on-main-in-a-full-loc"
-    },
-    {
-      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: concurrent sync in new and adopted client repos\tsync-not-blocked",
-      "kind": "bug",
-      "path": "tests/test_sync_not_blocked_by_other_runs.py",
-      "line": 21,
-      "text": "Not done: concurrent sync in new and adopted client repos",
-      "from": "blocking",
-      "item": "sync-not-blocked",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: only the held item's chat is skipped\tsync-not-blocked",
-      "kind": "bug",
-      "path": "tests/test_sync_not_blocked_by_other_runs.py",
-      "line": 28,
-      "text": "Not done: only the held item's chat is skipped",
-      "from": "blocking",
-      "item": "sync-not-blocked",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: proof list\tsync-not-blocked",
-      "kind": "bug",
-      "path": "tests/test_sync_not_blocked_by_other_runs.py",
-      "line": 23,
-      "text": "Not done: proof list",
-      "from": "blocking",
-      "item": "sync-not-blocked",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: sync while forge land runs\tsync-not-blocked",
-      "kind": "bug",
-      "path": "tests/test_sync_not_blocked_by_other_runs.py",
-      "line": 23,
-      "text": "Not done: sync while forge land runs",
-      "from": "blocking",
-      "item": "sync-not-blocked",
-      "status": "open",
-      "closed_by": null
     },
     {
       "key": "bug\ttests/test_trim_skills.py\tNot done: proof list\tFORGE-LANES-1/TESTS",
@@ -5244,17 +5244,6 @@
       "text": "The generated host coordinator skills already lag behind unrelated template guidance, which this fix leaves unchanged.",
       "from": "worker",
       "item": "runner-setting",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/native.py\tNative read handout stops being valid JSON when the agent line is full\tFORGE-TOOLS-1/READS",
-      "kind": "bug",
-      "path": "src/forge/native.py",
-      "line": 68,
-      "text": "Native read handout stops being valid JSON when the agent line is full",
-      "from": "blocking",
-      "item": "FORGE-TOOLS-1/READS",
       "status": "open",
       "closed_by": null
     },
@@ -6861,6 +6850,72 @@
       "text": "Both checked-in host guides have unrelated drift from their source template; this change updates only the concurrent-close rule.",
       "from": "worker",
       "item": "review-alongside-tests",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/codex.py\tNot done: forge sync refreshes generated files while other items' work or land runs, and waits for or skips only what that run actually has,\tsync-not-blocked",
+      "kind": "bug",
+      "path": "src/forge/codex.py",
+      "line": 336,
+      "text": "Not done: forge sync refreshes generated files while other items' work or land runs, and waits for or skips only what that run actually has,",
+      "from": "blocking",
+      "item": "sync-not-blocked",
+      "status": "done",
+      "closed_by": "dismissed"
+    },
+    {
+      "key": "bug\tsrc/forge/codex.py\tOld-release runs leave skipped chats only in local records\tsync-not-blocked",
+      "kind": "bug",
+      "path": "src/forge/codex.py",
+      "line": 329,
+      "text": "Old-release runs leave skipped chats only in local records",
+      "from": "blocking",
+      "item": "sync-not-blocked",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: concurrent sync in new and adopted client repos\tsync-not-blocked",
+      "kind": "bug",
+      "path": "tests/test_sync_not_blocked_by_other_runs.py",
+      "line": 21,
+      "text": "Not done: concurrent sync in new and adopted client repos",
+      "from": "blocking",
+      "item": "sync-not-blocked",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: only the held item's chat is skipped\tsync-not-blocked",
+      "kind": "bug",
+      "path": "tests/test_sync_not_blocked_by_other_runs.py",
+      "line": 28,
+      "text": "Not done: only the held item's chat is skipped",
+      "from": "blocking",
+      "item": "sync-not-blocked",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: proof list\tsync-not-blocked",
+      "kind": "bug",
+      "path": "tests/test_sync_not_blocked_by_other_runs.py",
+      "line": 23,
+      "text": "Not done: proof list",
+      "from": "blocking",
+      "item": "sync-not-blocked",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_sync_not_blocked_by_other_runs.py\tNot done: sync while forge land runs\tsync-not-blocked",
+      "kind": "bug",
+      "path": "tests/test_sync_not_blocked_by_other_runs.py",
+      "line": 23,
+      "text": "Not done: sync while forge land runs",
+      "from": "blocking",
+      "item": "sync-not-blocked",
       "status": "open",
       "closed_by": null
     }
