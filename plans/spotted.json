@@ -859,6 +859,50 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/close.py\tNot done: Follow-up fixes omit the finding's explanation\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/close.py",
+      "line": 384,
+      "text": "Not done: Follow-up fixes omit the finding's explanation",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/close.py\tNot done: Open advice findings do not get follow-up fixes\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/close.py",
+      "line": 379,
+      "text": "Not done: Open advice findings do not get follow-up fixes",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/close.py\tNot done: The owner cannot reverse the default after automatic merge\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/close.py",
+      "line": 109,
+      "text": "Not done: The owner cannot reverse the default after automatic merge",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/close.py\tNot done: The stop does not resume unattended after 30 minutes\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/close.py",
+      "line": 412,
+      "text": "Not done: The stop does not resume unattended after 30 minutes",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/close.py\tNot done: forge close --resolve accept applies the owner's choice when only the default branch moved or only Forge's own records changed\tthe-owner-s-review-loop-choice-often-can",
       "kind": "bug",
       "path": "src/forge/close.py",
@@ -910,6 +954,17 @@
       "text": "Preserve published round history when resuming in a fresh clone",
       "from": "blocking",
       "item": "where-time-went",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/close.py\tReversing the default leaves its follow-up fixes active\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/close.py",
+      "line": 109,
+      "text": "Reversing the default leaves its follow-up fixes active",
+      "from": "blocking",
+      "item": "stop-default-answer",
       "status": "open",
       "closed_by": null
     },
@@ -1020,17 +1075,6 @@
       "text": "Not done: Codex runs through the app server use the model's Fast tier for quick work (every fix, every repair round after the first) and for",
       "from": "blocking",
       "item": "codex-fast-when-needed",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/codex.py\tNot done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted\tfast-mode-visible",
-      "kind": "bug",
-      "path": "src/forge/codex.py",
-      "line": 627,
-      "text": "Not done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted",
-      "from": "blocking",
-      "item": "fast-mode-visible",
       "status": "open",
       "closed_by": null
     },
@@ -1200,17 +1244,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\tsrc/forge/codex_turn.py\tNot done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted\tfast-mode-visible",
-      "kind": "bug",
-      "path": "src/forge/codex_turn.py",
-      "line": 207,
-      "text": "Not done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted",
-      "from": "blocking",
-      "item": "fast-mode-visible",
-      "status": "open",
-      "closed_by": null
-    },
-    {
       "key": "bug\tsrc/forge/codex_turn.py\tNot done: Each task and fix keeps one worker chat per tool from its first round to merge: a later round resumes it even after a model or Eff\treuse-worker-chats",
       "kind": "bug",
       "path": "src/forge/codex_turn.py",
@@ -1229,17 +1262,6 @@
       "text": "Not done: running Codex readers' effort with default settings",
       "from": "blocking",
       "item": "FORGE-MOD-1/LIVE",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/doctor.py\tDoctor treats event history as its problem list\tfast-mode-visible",
-      "kind": "bug",
-      "path": "src/forge/doctor.py",
-      "line": 452,
-      "text": "Doctor treats event history as its problem list",
-      "from": "blocking",
-      "item": "fast-mode-visible",
       "status": "open",
       "closed_by": null
     },
@@ -1572,6 +1594,17 @@
       "item": "forge-runs-on-several-repos-at-once-can",
       "status": "done",
       "closed_by": "dismissed"
+    },
+    {
+      "key": "bug\tsrc/forge/machine.py\tLoad per core is understated when Forge has fewer available CPUs than the host\tadmit-by-load",
+      "kind": "bug",
+      "path": "src/forge/machine.py",
+      "line": 57,
+      "text": "Load per core is understated when Forge has fewer available CPUs than the host",
+      "from": "blocking",
+      "item": "admit-by-load",
+      "status": "open",
+      "closed_by": null
     },
     {
       "key": "bug\tsrc/forge/machine.py\tNot done: In the machine's agent line, a waiting run for an item that other planned work waits on starts before runs nothing waits on, first\tunblockers-first",
@@ -1981,6 +2014,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/nextstep.py\tA repo setting change does not reach an already stopped item\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/nextstep.py",
+      "line": 612,
+      "text": "A repo setting change does not reach an already stopped item",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/nextstep.py\tDo not report an exited worker as building while tests run\tboard-data-truth",
       "kind": "bug",
       "path": "src/forge/nextstep.py",
@@ -2043,6 +2087,17 @@
       "text": "Published story state can hide locally recorded question touches in the context hook.",
       "from": "worker",
       "item": "skipped-next",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/nextstep.py\tThe recorded default disappears from next when the item is ready\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/nextstep.py",
+      "line": 671,
+      "text": "The recorded default disappears from next when the item is ready",
+      "from": "blocking",
+      "item": "stop-default-answer",
       "status": "open",
       "closed_by": null
     },
@@ -2179,17 +2234,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\tsrc/forge/review.py\tCompound test commands can bypass the test place\treviews-skip-agent-line",
-      "kind": "bug",
-      "path": "src/forge/review.py",
-      "line": 269,
-      "text": "Compound test commands can bypass the test place",
-      "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
-    },
-    {
       "key": "bug\tsrc/forge/review.py\tConcurrent closes can lose a temporary Git object while a local review clone copies it; the CI suite failed and the focused local command cases pass.",
       "kind": "bug",
       "path": "src/forge/review.py",
@@ -2201,37 +2245,15 @@
       "closed_by": null
     },
     {
-      "key": "bug\tsrc/forge/review.py\tConfigured pytest collection can bypass the test place\treviews-skip-agent-line",
+      "key": "bug\tsrc/forge/review.py\tNot done: Forge starts a new worker run only while machine load per core is under 1.5, and worker test runs use at most two test processes,\tadmit-by-load",
       "kind": "bug",
       "path": "src/forge/review.py",
-      "line": 288,
-      "text": "Configured pytest collection can bypass the test place",
+      "line": 296,
+      "text": "Not done: Forge starts a new worker run only while machine load per core is under 1.5, and worker test runs use at most two test processes,",
       "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/review.py\tExplicit nonstandard pytest files bypass the test place\treviews-skip-agent-line",
-      "kind": "bug",
-      "path": "src/forge/review.py",
-      "line": 293,
-      "text": "Explicit nonstandard pytest files bypass the test place",
-      "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/review.py\tNested pytest config lets doctests bypass the test place\treviews-skip-agent-line",
-      "kind": "bug",
-      "path": "src/forge/review.py",
-      "line": 289,
-      "text": "Nested pytest config lets doctests bypass the test place",
-      "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
+      "item": "admit-by-load",
+      "status": "done",
+      "closed_by": "dismissed"
     },
     {
       "key": "bug\tsrc/forge/review.py\tNot done: each running reviewer's actual model and effort\tFORGE-MOD-1/LIVE",
@@ -2287,28 +2309,6 @@
       "item": "forge-runs-on-several-repos-at-once-can",
       "status": "done",
       "closed_by": "dismissed"
-    },
-    {
-      "key": "bug\tsrc/forge/review.py\tPytest doctests can bypass the test place despite an unrestricted run\treviews-skip-agent-line",
-      "kind": "bug",
-      "path": "src/forge/review.py",
-      "line": 291,
-      "text": "Pytest doctests can bypass the test place despite an unrestricted run",
-      "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/review.py\tStandalone picker runs a full second suite without a test place\treviews-skip-agent-line",
-      "kind": "bug",
-      "path": "src/forge/review.py",
-      "line": 277,
-      "text": "Standalone picker runs a full second suite without a test place",
-      "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
     },
     {
       "key": "bug\tsrc/forge/story.py\tA dependent story's roadmap entry never reaches the default branch\tstory-from-goal",
@@ -2652,6 +2652,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/templates/skill.md\tNot done: Shipped stop guidance forbids the required retry\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/templates/skill.md",
+      "line": 1228,
+      "text": "Not done: Shipped stop guidance forbids the required retry",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/templates/skill.md\tNot done: The guide names the Yarn 1 and Yarn 2+ update commands\tskipped-templates",
       "kind": "bug",
       "path": "src/forge/templates/skill.md",
@@ -2672,6 +2683,28 @@
       "item": "queued-not-stop",
       "status": "open",
       "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/templates/skills/simplified-technical-english/NOTICE.md\tNot done: the bundled license and notice describe a word list that is absent\tplain-english-skill",
+      "kind": "bug",
+      "path": "src/forge/templates/skills/simplified-technical-english/NOTICE.md",
+      "line": 9,
+      "text": "Not done: the bundled license and notice describe a word list that is absent",
+      "from": "blocking",
+      "item": "plain-english-skill",
+      "status": "done",
+      "closed_by": "dismissed"
+    },
+    {
+      "key": "bug\tsrc/forge/templates/skills/simplified-technical-english/SKILL.md\tThe installed skill's check command fails from the client repository root\tplain-english-skill",
+      "kind": "bug",
+      "path": "src/forge/templates/skills/simplified-technical-english/SKILL.md",
+      "line": 94,
+      "text": "The installed skill's check command fails from the client repository root",
+      "from": "blocking",
+      "item": "plain-english-skill",
+      "status": "done",
+      "closed_by": "dismissed"
     },
     {
       "key": "bug\tsrc/forge/time_records.py\tNot done: keep gaps in legacy timing history unknown\twhere-time-went",
@@ -2751,13 +2784,13 @@
       "closed_by": null
     },
     {
-      "key": "bug\tsrc/forge/worker.py\tFallback reports Claude as the active worker after switching to Codex\tfast-mode-visible",
+      "key": "bug\tsrc/forge/worker.py\tNarrowing instruction expires after one worker round\tstop-default-answer",
       "kind": "bug",
       "path": "src/forge/worker.py",
-      "line": 256,
-      "text": "Fallback reports Claude as the active worker after switching to Codex",
+      "line": 154,
+      "text": "Narrowing instruction expires after one worker round",
       "from": "blocking",
-      "item": "fast-mode-visible",
+      "item": "stop-default-answer",
       "status": "open",
       "closed_by": null
     },
@@ -2817,6 +2850,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/worker.py\tNot done: The worker receives conflicting instructions about deferred findings\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/worker.py",
+      "line": 152,
+      "text": "Not done: The worker receives conflicting instructions about deferred findings",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/worker.py\tNot done: the item's round number on every timing record\tFORGE-MOD-1/RUNS",
       "kind": "bug",
       "path": "src/forge/worker.py",
@@ -2850,6 +2894,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/worker.py\tOwner reversal during an active worker round is ignored\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/worker.py",
+      "line": 159,
+      "text": "Owner reversal during an active worker round is ignored",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "done",
+      "closed_by": "dismissed"
+    },
+    {
       "key": "bug\tsrc/forge/worker.py\tPreserve clean-failure fallback when remembering Claude chats\treuse-worker-chats",
       "kind": "bug",
       "path": "src/forge/worker.py",
@@ -2868,6 +2923,17 @@
       "text": "Standard: Delete before adding",
       "from": "blocking",
       "item": "skipped-workers",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/worker.py\tThe owner's later split choice does not reach the worker\tstop-default-answer",
+      "kind": "bug",
+      "path": "src/forge/worker.py",
+      "line": 151,
+      "text": "The owner's later split choice does not reach the worker",
+      "from": "blocking",
+      "item": "stop-default-answer",
       "status": "open",
       "closed_by": null
     },
@@ -3191,17 +3257,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\ttests/test_codex_turn_speed_receipts.py\tNot done: proof list\tfast-mode-visible",
-      "kind": "bug",
-      "path": "tests/test_codex_turn_speed_receipts.py",
-      "line": 83,
-      "text": "Not done: proof list",
-      "from": "blocking",
-      "item": "fast-mode-visible",
-      "status": "done",
-      "closed_by": "dismissed"
-    },
-    {
       "key": "bug\ttests/test_codex_turns_trust_forge_hooks.py\tNot done: Hook trust in new and upgraded client repos\tcodex-hook-trust",
       "kind": "bug",
       "path": "tests/test_codex_turns_trust_forge_hooks.py",
@@ -3299,17 +3354,6 @@
       "item": "forge-runs-on-several-repos-at-once-can",
       "status": "done",
       "closed_by": "dismissed"
-    },
-    {
-      "key": "bug\ttests/test_fix_agent_runs_wait_in_line.py\tNot done: proof list\treviews-skip-agent-line",
-      "kind": "bug",
-      "path": "tests/test_fix_agent_runs_wait_in_line.py",
-      "line": 65,
-      "text": "Not done: proof list",
-      "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
     },
     {
       "key": "bug\ttests/test_fix_clients_need_v1_2_1_for_the_upgrade_hook.py\tNot done: Upgrade a client adopted on v1.2.3 to v1.2.4\trelease-124",
@@ -3440,6 +3484,28 @@
       "text": "The orphan-server setup failed in the full suite but passed alone; this flaky failure remains unresolved.",
       "from": "worker",
       "item": "one-forge-close-looks-up-the-same-git-fa",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_fix_plain_english_skill.py\tNot done: the checker test cannot detect a lost semicolon rule\tplain-english-skill",
+      "kind": "bug",
+      "path": "tests/test_fix_plain_english_skill.py",
+      "line": 67,
+      "text": "Not done: the checker test cannot detect a lost semicolon rule",
+      "from": "blocking",
+      "item": "plain-english-skill",
+      "status": "done",
+      "closed_by": "dismissed"
+    },
+    {
+      "key": "bug\ttests/test_fix_plain_english_skill.py\tNot done: the proof test misses required guidance and checker behavior\tplain-english-skill",
+      "kind": "bug",
+      "path": "tests/test_fix_plain_english_skill.py",
+      "line": 53,
+      "text": "Not done: the proof test misses required guidance and checker behavior",
+      "from": "blocking",
+      "item": "plain-english-skill",
       "status": "open",
       "closed_by": null
     },
@@ -3983,17 +4049,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\ttests/test_small_test_runs_skip_the_test_line.py\tNot done: the five-file picker boundary has an end-to-end lane test\treviews-skip-agent-line",
-      "kind": "bug",
-      "path": "tests/test_small_test_runs_skip_the_test_line.py",
-      "line": 37,
-      "text": "Not done: the five-file picker boundary has an end-to-end lane test",
-      "from": "blocking",
-      "item": "reviews-skip-agent-line",
-      "status": "open",
-      "closed_by": null
-    },
-    {
       "key": "bug\ttests/test_started_branches_claim_the_work.py\tNot done: proof list\tstart-is-claim",
       "kind": "bug",
       "path": "tests/test_started_branches_claim_the_work.py",
@@ -4038,6 +4093,17 @@
       "closed_by": "several-tests-fail-on-main-in-a-full-loc"
     },
     {
+      "key": "bug\ttests/test_stop_default_answer.py\tNot done: proof list\tstop-default-answer",
+      "kind": "bug",
+      "path": "tests/test_stop_default_answer.py",
+      "line": 154,
+      "text": "Not done: proof list",
+      "from": "blocking",
+      "item": "stop-default-answer",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\ttests/test_trim_skills.py\tNot done: proof list\tFORGE-LANES-1/TESTS",
       "kind": "bug",
       "path": "tests/test_trim_skills.py",
@@ -4078,6 +4144,39 @@
       "text": "Not done: Test related-test instructions in new and previously adopted client repos",
       "from": "blocking",
       "item": "worker-fast-tests",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_worker_runs_wait_for_machine_load.py\tNot done: proof list\tadmit-by-load",
+      "kind": "bug",
+      "path": "tests/test_worker_runs_wait_for_machine_load.py",
+      "line": 60,
+      "text": "Not done: proof list",
+      "from": "blocking",
+      "item": "admit-by-load",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_worker_runs_wait_for_machine_load.py\tNot done: the 1.5 load-per-core boundary test\tadmit-by-load",
+      "kind": "bug",
+      "path": "tests/test_worker_runs_wait_for_machine_load.py",
+      "line": 56,
+      "text": "Not done: the 1.5 load-per-core boundary test",
+      "from": "blocking",
+      "item": "admit-by-load",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_worker_runs_wait_for_machine_load.py\tNot done: two-process proof for previously adopted repos\tadmit-by-load",
+      "kind": "bug",
+      "path": "tests/test_worker_runs_wait_for_machine_load.py",
+      "line": 66,
+      "text": "Not done: two-process proof for previously adopted repos",
+      "from": "blocking",
+      "item": "admit-by-load",
       "status": "open",
       "closed_by": null
     },
@@ -5424,105 +5523,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\tsrc/forge/machine.py\tLoad per core is understated when Forge has fewer available CPUs than the host\tadmit-by-load",
-      "kind": "bug",
-      "path": "src/forge/machine.py",
-      "line": 57,
-      "text": "Load per core is understated when Forge has fewer available CPUs than the host",
-      "from": "blocking",
-      "item": "admit-by-load",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\tsrc/forge/review.py\tNot done: Forge starts a new worker run only while machine load per core is under 1.5, and worker test runs use at most two test processes,\tadmit-by-load",
-      "kind": "bug",
-      "path": "src/forge/review.py",
-      "line": 296,
-      "text": "Not done: Forge starts a new worker run only while machine load per core is under 1.5, and worker test runs use at most two test processes,",
-      "from": "blocking",
-      "item": "admit-by-load",
-      "status": "done",
-      "closed_by": "dismissed"
-    },
-    {
-      "key": "bug\tsrc/forge/templates/skills/simplified-technical-english/NOTICE.md\tNot done: the bundled license and notice describe a word list that is absent\tplain-english-skill",
-      "kind": "bug",
-      "path": "src/forge/templates/skills/simplified-technical-english/NOTICE.md",
-      "line": 9,
-      "text": "Not done: the bundled license and notice describe a word list that is absent",
-      "from": "blocking",
-      "item": "plain-english-skill",
-      "status": "done",
-      "closed_by": "dismissed"
-    },
-    {
-      "key": "bug\tsrc/forge/templates/skills/simplified-technical-english/SKILL.md\tThe installed skill's check command fails from the client repository root\tplain-english-skill",
-      "kind": "bug",
-      "path": "src/forge/templates/skills/simplified-technical-english/SKILL.md",
-      "line": 94,
-      "text": "The installed skill's check command fails from the client repository root",
-      "from": "blocking",
-      "item": "plain-english-skill",
-      "status": "done",
-      "closed_by": "dismissed"
-    },
-    {
-      "key": "bug\ttests/test_fix_plain_english_skill.py\tNot done: the checker test cannot detect a lost semicolon rule\tplain-english-skill",
-      "kind": "bug",
-      "path": "tests/test_fix_plain_english_skill.py",
-      "line": 67,
-      "text": "Not done: the checker test cannot detect a lost semicolon rule",
-      "from": "blocking",
-      "item": "plain-english-skill",
-      "status": "done",
-      "closed_by": "dismissed"
-    },
-    {
-      "key": "bug\ttests/test_fix_plain_english_skill.py\tNot done: the proof test misses required guidance and checker behavior\tplain-english-skill",
-      "kind": "bug",
-      "path": "tests/test_fix_plain_english_skill.py",
-      "line": 53,
-      "text": "Not done: the proof test misses required guidance and checker behavior",
-      "from": "blocking",
-      "item": "plain-english-skill",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\ttests/test_worker_runs_wait_for_machine_load.py\tNot done: proof list\tadmit-by-load",
-      "kind": "bug",
-      "path": "tests/test_worker_runs_wait_for_machine_load.py",
-      "line": 60,
-      "text": "Not done: proof list",
-      "from": "blocking",
-      "item": "admit-by-load",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\ttests/test_worker_runs_wait_for_machine_load.py\tNot done: the 1.5 load-per-core boundary test\tadmit-by-load",
-      "kind": "bug",
-      "path": "tests/test_worker_runs_wait_for_machine_load.py",
-      "line": 56,
-      "text": "Not done: the 1.5 load-per-core boundary test",
-      "from": "blocking",
-      "item": "admit-by-load",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "bug\ttests/test_worker_runs_wait_for_machine_load.py\tNot done: two-process proof for previously adopted repos\tadmit-by-load",
-      "kind": "bug",
-      "path": "tests/test_worker_runs_wait_for_machine_load.py",
-      "line": 66,
-      "text": "Not done: two-process proof for previously adopted repos",
-      "from": "blocking",
-      "item": "admit-by-load",
-      "status": "open",
-      "closed_by": null
-    },
-    {
       "key": "bug\tsrc/forge/fasttest.py\tNot done: Close loses source-file warnings after another test runner\ttest-gap-warning",
       "kind": "bug",
       "path": "src/forge/fasttest.py",
@@ -5662,6 +5662,149 @@
       "text": "Not done: proof list",
       "from": "blocking",
       "item": "FORGE-TOOLS-1/HOLD",
+      "status": "done",
+      "closed_by": "dismissed"
+    },
+    {
+      "key": "bug\tsrc/forge/review.py\tCompound test commands can bypass the test place\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 269,
+      "text": "Compound test commands can bypass the test place",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/review.py\tConfigured pytest collection can bypass the test place\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 288,
+      "text": "Configured pytest collection can bypass the test place",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/review.py\tExplicit nonstandard pytest files bypass the test place\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 293,
+      "text": "Explicit nonstandard pytest files bypass the test place",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/review.py\tNested pytest config lets doctests bypass the test place\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 289,
+      "text": "Nested pytest config lets doctests bypass the test place",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/review.py\tPytest doctests can bypass the test place despite an unrestricted run\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 291,
+      "text": "Pytest doctests can bypass the test place despite an unrestricted run",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/review.py\tStandalone picker runs a full second suite without a test place\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "src/forge/review.py",
+      "line": 277,
+      "text": "Standalone picker runs a full second suite without a test place",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_fix_agent_runs_wait_in_line.py\tNot done: proof list\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "tests/test_fix_agent_runs_wait_in_line.py",
+      "line": 65,
+      "text": "Not done: proof list",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_small_test_runs_skip_the_test_line.py\tNot done: the five-file picker boundary has an end-to-end lane test\treviews-skip-agent-line",
+      "kind": "bug",
+      "path": "tests/test_small_test_runs_skip_the_test_line.py",
+      "line": 37,
+      "text": "Not done: the five-file picker boundary has an end-to-end lane test",
+      "from": "blocking",
+      "item": "reviews-skip-agent-line",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/codex.py\tNot done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted\tfast-mode-visible",
+      "kind": "bug",
+      "path": "src/forge/codex.py",
+      "line": 627,
+      "text": "Not done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted",
+      "from": "blocking",
+      "item": "fast-mode-visible",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/codex_turn.py\tNot done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted\tfast-mode-visible",
+      "kind": "bug",
+      "path": "src/forge/codex_turn.py",
+      "line": 207,
+      "text": "Not done: Each Codex turn records the speed tier it asked for and got, forge doctor and the run's first line say plainly when Fast waswanted",
+      "from": "blocking",
+      "item": "fast-mode-visible",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/doctor.py\tDoctor treats event history as its problem list\tfast-mode-visible",
+      "kind": "bug",
+      "path": "src/forge/doctor.py",
+      "line": 452,
+      "text": "Doctor treats event history as its problem list",
+      "from": "blocking",
+      "item": "fast-mode-visible",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/worker.py\tFallback reports Claude as the active worker after switching to Codex\tfast-mode-visible",
+      "kind": "bug",
+      "path": "src/forge/worker.py",
+      "line": 256,
+      "text": "Fallback reports Claude as the active worker after switching to Codex",
+      "from": "blocking",
+      "item": "fast-mode-visible",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_codex_turn_speed_receipts.py\tNot done: proof list\tfast-mode-visible",
+      "kind": "bug",
+      "path": "tests/test_codex_turn_speed_receipts.py",
+      "line": 83,
+      "text": "Not done: proof list",
+      "from": "blocking",
+      "item": "fast-mode-visible",
       "status": "done",
       "closed_by": "dismissed"
     }
