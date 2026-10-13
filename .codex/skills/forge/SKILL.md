@@ -244,7 +244,11 @@ worktree path, shared by the repo's worktrees).
 
 Both views' `items` has one row per story and fix, with tasks in the story's `children`.
 Finished stories, tasks and fixes older than seven days are left out of JSON;
-the HTML board keeps their history. Each call reads current state without a history cache.
+the HTML board keeps them. The page is drawn from the same rows, so each state and time on it
+matches the JSON: every story and fix sorted needs you, blocked, in progress, planned, no plan
+yet, then done in one closed fold, with a one-line key to the map's shapes and the words part,
+fix and plan. It uses the full window, has light and dark themes and stacks to one column below
+720px. Each call reads current state without a history cache.
 Assigned merged parts stay omitted rather than appearing as unstarted. Backticks around
 task IDs in the plan are ignored by both boards.
 The HTML page also draws one inline dependency map across the roadmap and stage timelines, without scripts or
@@ -285,11 +289,11 @@ Live readers, workers and reviews take precedence
 over a saved status, including in `forge next`. Approval history uses one display name per
 Git email, honoring mailmap, and fix titles shorten at a word boundary.
 Each row has `id`, `kind`, plain `title`, `stage`, `worker` (kind, model and
-`started_at`, or null), `pr` (number and checks: pass, fail, running or unknown),
+`started_at`, or null), `pr` (number, url and checks: pass, fail, running or unknown),
 `findings` (count and titles), `round`, `stages`, `total_seconds`, `occurrences`,
 `approval`, and its own `next`. A story awaiting approval has `approval.doc`, the
 absolute path to its document in its own worktree; other rows have null approval.
-Task and fix rows add `time_breakdown` and `rounds`.
+Task and fix rows add `time_breakdown` and `rounds`; story rows add `outcome` (null until done).
 An empty board has an empty items list. Missing state shows unknown. No run start,
 end, round or occurrence id is invented when its producer has not recorded one.
 The last task's merged outcome marks its story done, even when the saved story
