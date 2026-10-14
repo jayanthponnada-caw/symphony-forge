@@ -650,6 +650,17 @@
       "closed_by": "worker-no-settings"
     },
     {
+      "key": "bug\tplans/FORGE-BOARD-2.md\tNot done: 9. The pane's first screen matches the board\tFORGE-BOARD-2/PANE",
+      "kind": "bug",
+      "path": "plans/FORGE-BOARD-2.md",
+      "line": 578,
+      "text": "Not done: 9. The pane's first screen matches the board",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/PANE",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tplans/spotted.json\tStandard: Touch only what the task needs\tclaude-sonnet-default",
       "kind": "bug",
       "path": "plans/spotted.json",
@@ -3906,6 +3917,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/mod/hooks/summary.ts\tNot done: 9's sentence, totals and In progress lines\tFORGE-BOARD-2/PANE",
+      "kind": "bug",
+      "path": "src/forge/mod/hooks/summary.ts",
+      "line": 162,
+      "text": "Not done: 9's sentence, totals and In progress lines",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/PANE",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/mod/hooks/summary.ts\tNot done: Board rows do not show the actual next step\tpane-grouped-board",
       "kind": "bug",
       "path": "src/forge/mod/hooks/summary.ts",
@@ -6960,6 +6982,28 @@
       "text": "Not done: proof list",
       "from": "blocking",
       "item": "team-sentence-short",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_board_pane_lines.py\tNot done: test the first-screen facts and overflow parity\tFORGE-BOARD-2/PANE",
+      "kind": "bug",
+      "path": "tests/test_board_pane_lines.py",
+      "line": 84,
+      "text": "Not done: test the first-screen facts and overflow parity",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/PANE",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\ttests/test_board_pane_lines.py\tNot done: the pane first-screen parity test\tFORGE-BOARD-2/PANE",
+      "kind": "bug",
+      "path": "tests/test_board_pane_lines.py",
+      "line": 40,
+      "text": "Not done: the pane first-screen parity test",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/PANE",
       "status": "open",
       "closed_by": null
     },
