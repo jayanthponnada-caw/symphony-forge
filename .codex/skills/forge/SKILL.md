@@ -395,12 +395,18 @@ their totals, because their intervals may overlap.
 Quote the item's round lines when explaining a long run, then quote the relevant breakdown
 categories rather than adding overlapping stage timers. The board page shows these same
 details. The pull request's **How it went** section carries intervals, review rounds (including
-clean reviews), and waits with their ends. Close and merge retain observations from other
+clean reviews), and waits with their ends. The shared record has a fixed size: while it is over, the oldest
+detail of any kind (round lines, intervals, then raw events such as repeated CI waits) folds into
+one "Rounds 1–N" line of totals and finding counts, oldest first; the newest round keeps its own numbered line,
+and its folded retries add to it. Free text in each entry is cut to 300 characters, and a round
+too big on its own, such as a huge review, folds whole into its line. Live progress stays local. So a
+long item stays inside GitHub's body limit, and folding never changes its total time. Close and merge retain observations from other
 checkouts and recompute repeated findings and overlapping time. The board reads this shared
 record alongside local observations; `source` says which it had. A GitHub merge ends the last
 wait at its merge time and names its merger. Story time counts each instant once: working when
 any part or recorded plan read is working, waiting when none is working and any is waiting,
-otherwise unknown. Human times use rounded plain units; JSON keeps raw seconds. Rebuilt history
+otherwise unknown. Inside a part's folded time range, the story's split between working and
+waiting is approximate; the totals stay exact. Human times use rounded plain units; JSON keeps raw seconds. Rebuilt history
 keeps its label and missing evidence remains unknown. New repos get this at init; existing
 repos, including earlier adoptions, get it on upgrade and sync.
 Worker questions and their answers refresh an existing pull request's record; a question before
