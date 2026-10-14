@@ -83,10 +83,14 @@ WHY, DONE = "Let the agent merge this repo's ready pull requests.", 'The default
 
 
 def close(args: argparse.Namespace) -> int:
+    from forge import backfill
     from forge.merge import ENABLE
 
     item = args.item
     top = _worktree(item)
+    retried_history = (repo.forge_dir(top) / "backfill-pending").exists()
+    if retried_history:
+        backfill.run(top)
     state, cfg = repo.read_state(item, top) or {}, repo.config(top)
     switch = (item == ENABLE and state.get("kind") == "fix" and
               (state.get("why"), state.get("done_when")) == (WHY, DONE))
@@ -153,7 +157,10 @@ def close(args: argparse.Namespace) -> int:
         if migrating:  # forge-pr-check can run now that the default branch has Forge, so require it
             init.protect(top, default, cfg["checks"])
         _attach(top, item, branch)
-        return _merged(top, item)
+        done = _merged(top, item)
+        if not retried_history and backfill.upgrade_fix(top, item, state):
+            backfill.run(top)
+        return done
 
     previous = state.get("review") or {}
     legacy_diff = None
@@ -420,6 +427,8 @@ def close(args: argparse.Namespace) -> int:
         print(f"Next: forge merge {item}")
     else:
         print(f"Ready: {item} has a clean review and green checks. A human merges its pull request.")
+    if not retried_history and backfill.upgrade_fix(top, item, state):
+        backfill.run(top)
     return 0
 
 
@@ -822,6 +831,8 @@ def _refresh_record(top: Path, item: str, state: dict[str, Any], pr: dict[str, A
     pr = pr or _pull_request(top, state.get("branch") or repo.current_branch(top))
     if not pr:
         return ""
+    if (repo.forge_dir(top) / "backfill-pending").exists() and not time_records.from_body(pr.get("body") or ""):
+        return pr.get("body") or ""  # A partial local record would make the retry skip older evidence.
     body = _bounded_body(time_records.refresh_record(top, item, state, pr.get("body") or ""))
     if body != (pr.get("body") or ""):
         path = repo.forge_dir(top) / f"pr-body-{item.replace('/', '-')}.md"
@@ -836,7 +847,26 @@ def _publish(top: Path, item: str, state: dict[str, Any], branch: str, default: 
     """Open the pull request, or refresh its contract and Forge's block. While the review is
     blocked or the local tests failed, the pull request is a draft."""
     check, proof = evidence
-    history = time_records.how_it_went(top, item, state, (pr or {}).get("body") or "")
+    published = (pr or {}).get("body") or ""
+    rebuilding = not time_records.from_body(published)
+    rebuilt = None
+    if rebuilding:
+        from forge import backfill
+        head = repo.git("rev-parse", "HEAD", cwd=top)
+        def reconstruct():
+            try:
+                rebuilt = backfill.rebuild(top, {**(pr or {}), "headRefName": branch}, pushed_head=head)
+                return rebuilt[2] if rebuilt else None
+            except (repo.Refused, subprocess.CalledProcessError, OSError, ValueError, KeyError, TypeError):
+                backfill.failed(top)
+                return None
+        rebuilt = repo.command_fact(("first publish history", branch, head), top, reconstruct)
+        if rebuilt:
+            published = backfill.seed(published, rebuilt)
+    history = time_records.how_it_went(top, item, state, published)
+    if rebuilding and rebuilt is None:
+        # Keep rendered local observations, but no record that would retire the missing-history retry.
+        history = re.sub(r"\n<!-- forge:time-record \{.*?\} -->", "", history, flags=re.S)
     block = _block(result, "\n\n".join(part for part in (history, proof, check) if part))
     draft = (result["status"] == "blocked" or bool(state.get("tests")) or
              (pr is None and result["status"] == "reviewing"))

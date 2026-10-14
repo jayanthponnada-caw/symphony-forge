@@ -20,7 +20,33 @@ Item = dict[str, Any]
 STORY_STATES = ("done", "building", "approved, not started", "waiting for approval", "planning", "no plan yet")
 IN_PROGRESS_STATES = ("building", "in progress", "ready to merge")  # the board page's In progress group
 WORK_STATES = ("done", "ready to merge", "in progress", "to do")
-FIELDS = "headRefName,headRefOid,state,title,body,mergedAt,mergedBy,author,number,url,isDraft"
+FIELDS = "headRefName,headRefOid,state,title,body,mergedAt,mergedBy,author,number,url,isDraft,files"
+
+
+def item_key(branch: str, paths: list[str]) -> str | None:
+    """An item's own state identifies a Forge branch; its prefix alone does not."""
+    for path in paths:
+        fix = re.fullmatch(r"\.factory/fixes/([^/]+)\.json", path)
+        plan = re.fullmatch(r"\.factory/stories/([^/]+)/story\.json", path)
+        part = re.fullmatch(r"\.factory/stories/([^/]+)/tasks/([^/]+)\.json", path)
+        if fix and branch == f"fix/{fix[1]}":
+            return fix[1]
+        if plan and branch == f"story/{plan[1]}":
+            return plan[1]
+        if part and branch == f"task/{part[1]}-{part[2]}":
+            return f"{part[1]}/{part[2]}"
+    return None
+
+
+def through_forge(pr: Item) -> bool:
+    branch = str(pr.get("headRefName") or "")
+    if not branch.startswith(("story/", "task/", "fix/")):
+        return False
+    files = pr.get("files")
+    if time_records.from_body(pr.get("body") or "") or not isinstance(files, list) or len(files) >= 100:
+        return True  # Missing or capped file evidence cannot establish that the state is absent.
+    return item_key(branch, [file["path"] for file in files if isinstance(file, dict)
+                             and isinstance(file.get("path"), str)]) is not None
 
 
 def full_weeks(now: datetime, count: int) -> list[datetime]:
@@ -66,7 +92,7 @@ def _listing(top: Path, state: str, *args: str, fields: str = FIELDS, limit: str
     return rows if isinstance(rows, list) and all(isinstance(r, dict) for r in rows) else None
 
 
-def prs(top: Path) -> Item | None:
+def prs(top: Path, *, fresh: bool = False) -> Item | None:
     """Open pull requests, and the merged ones searched one week at a time for six full weeks and
     this one, cached together for a minute. None when gh is missing or any list fails."""
     # ponytail: eight list calls a minute at most; a week over 1,000 merges shows unknown, search by day if a team needs it.
@@ -74,6 +100,8 @@ def prs(top: Path) -> Item | None:
         opened = _listing(top, "open")
         if opened is None:
             return None  # GitHub is unreachable: one call, not eight
+        # Board restoration and backfill share these windows. The first Monday
+        # is at least 42 days ago, including the cutoff on a Sunday (48 days).
         starts = [*full_weeks(now, 6), full_weeks(now + timedelta(weeks=1), 1)[0]]
         with ThreadPoolExecutor(len(starts)) as pool:  # the weeks at once; one at a time took ~7x as long
             lists = list(pool.map(lambda start: _listing(
@@ -85,7 +113,17 @@ def prs(top: Path) -> Item | None:
             # A capped week need not hold all of its rows, so its counts are unknown.
             weeks.append({"start": start.isoformat(), "prs": found, "complete": len(found) < 1000})
         return {"open": opened, "open_complete": len(opened) < 1000, "weeks": weeks}
+    if fresh:
+        return fetch(time_records.when(repo.now()) or datetime.now(timezone.utc))
     return repo.command_fact("github prs", top, lambda: _cached(top, "prs-cache", fetch))  # one try a command
+
+
+def people(body: str) -> Item:
+    """Original actors survive a deleted squash branch in the item's shared evidence."""
+    record = time_records.from_body(body)
+    events, summary = record.get("events", []), record.get("summary") or {}
+    return {field: summary.get(field) or next((event.get("by") for event in events if event.get("event") == name), None)
+            for field, name in (("started_by", "item started"), ("approved_by", "plan approved"))}
 
 
 def merged_before_weeks(top: Path) -> dict[str, Item]:

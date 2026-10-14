@@ -422,12 +422,15 @@ def how_it_went(top: Path, key: str, state: dict[str, Any], published: str = "",
                       for category, label in zip(CATEGORIES, LABELS))
     times = "; ".join(f"{kind}: {duration(view[f'{kind}_seconds'])}"
                       for kind in ("working", "waiting", "unknown")) + "\n\n" + times
-    current = times + "\n\n" + "\n".join(r["line"] for r in view["rounds"])
+    # A rebuild also sees reviews already rendered by releases without a shared record.
+    retained_rounds = set(re.findall(r"^Round (\d+):", retained, re.M)) if data.get("rebuilt") else set()
+    current = times + "\n\n" + "\n".join(r["line"] for r in view["rounds"]
+                                            if str(r["round"]) not in retained_rounds)
     if retained:
         current = (retained + "\n\n" + RESUMED + "\n\n"
                    "Observed after resuming in this checkout (totals are separate from the "
                    "published measurements above):\n\n" + current)
-    if data.get("rebuilt"):
+    if data.get("rebuilt") and not retained.startswith("Rebuilt from history."):
         current = "Rebuilt from history.\n\n" + current
     if data.get("truncated"):
         current = "Older time detail was shortened to fit GitHub; missing time is unknown.\n\n" + current
@@ -465,6 +468,7 @@ def from_body(body: str) -> dict[str, Any]:
                         for kind in ("working", "waiting", "unknown"))):
             summary["folded"] = None
         merged({}, data)
+        "".join((data.get("summary") or {}).get(field) or "" for field in ("started_by", "approved_by"))
         (data.get("ready") or {}).get("commit")
         "".join([data.get("legacy_text") or ""])
         return data
@@ -589,7 +593,11 @@ def _summarised(data: dict[str, Any], summary: dict[str, Any] | None, rows: dict
     part["rounds"] = [_short(entry) for entry in part["rounds"]]
     whole = _summed(summary, part) if summary else part
     kept = {name: whole[name] for name in ("time_breakdown", *SUMMED, "rounds", "intervals", "seen", "known")}
-    return ({**kept, "until": until.isoformat(), "round": number, "folded": (summary or {}).get("folded")},
+    # The summary replaces these events, including actors whose original commits may be gone.
+    people = {field: (summary or {}).get(field) or next(
+        (event.get("by") for event in past["events"] if event.get("event") == name), None)
+        for field, name in (("started_by", "item started"), ("approved_by", "plan approved"))}
+    return ({**kept, **people, "until": until.isoformat(), "round": number, "folded": (summary or {}).get("folded")},
             {name: [r for r in rows[name] if not _settled(r, number, until)] for name in rows})
 
 
@@ -610,10 +618,18 @@ def merged(local: dict[str, Any], published: dict[str, Any]) -> dict[str, Any]:
     """Union observations, then derive once so overlapping snapshots never add time."""
     if not published:
         return {**local, "source": "local"}
+    # A reconstructed review and its original local observation are the same review.
+    # Accepting findings can commit a clean snapshot of the same blocked review.
+    observed = {e.get("commit") for e in local.get("events", [])
+                if e.get("event") == "review result" and e.get("commit")}
+    replaced = {e["rebuilt_commit"] for e in published.get("events", [])
+                if e.get("rebuilt_commit") and e.get("commit") in observed}
     rows = {}
     for name in ("events", "timings"):
         unique = {}
         for row in [*published.get(name, []), *local.get(name, [])]:
+            if row.get("rebuilt_commit") in replaced:
+                continue
             identity = row.get("id") if name == "events" else None
             unique.setdefault(identity or json.dumps(row, sort_keys=True), {**row})
         rows[name] = sorted(unique.values(), key=lambda row: row.get("at") or row.get("start") or "")
@@ -624,7 +640,7 @@ def merged(local: dict[str, Any], published: dict[str, Any]) -> dict[str, Any]:
     reviews = [r for r in rows["events"] if r.get("event") == "review result"]
     if reviews and reviews[0].get("review_round") == 1:
         for number, result in enumerate(reviews, 1):
-            if result.get("review_round") is None and isinstance(result.get("findings"), list):
+            if isinstance(result.get("findings"), list):
                 result["review_round"] = number
     state = {**published.get("state", {}), **local.get("state", {})}
     starts = [step for data in (local, published) for step in data.get("state", {}).get("steps", [])

@@ -529,17 +529,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\tdocs/specs/item-cost.md\tNot done: measured run coverage mixes rounds, attempts and items\titem-cost-spec",
-      "kind": "bug",
-      "path": "docs/specs/item-cost.md",
-      "line": 41,
-      "text": "Not done: measured run coverage mixes rounds, attempts and items",
-      "from": "blocking",
-      "item": "item-cost-spec",
-      "status": "open",
-      "closed_by": null
-    },
-    {
       "key": "bug\tdocs/specs/sandbox-runs.md\tNot done: proof list\tsandbox-runs-spec",
       "kind": "bug",
       "path": "docs/specs/sandbox-runs.md",
@@ -626,6 +615,61 @@
       "item": "review-images",
       "status": "done",
       "closed_by": "dismissed"
+    },
+    {
+      "key": "bug\tsrc/forge/backfill.py\tAn unrelated fix-prefixed PR prevents the backfill from finishing\tFORGE-BOARD-2/BACKFILL",
+      "kind": "bug",
+      "path": "src/forge/backfill.py",
+      "line": 167,
+      "text": "An unrelated fix-prefixed PR prevents the backfill from finishing",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/BACKFILL",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/backfill.py\tNot done: CI waits for every pushed head\tFORGE-BOARD-2/BACKFILL",
+      "kind": "bug",
+      "path": "src/forge/backfill.py",
+      "line": 88,
+      "text": "Not done: CI waits for every pushed head",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/BACKFILL",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/backfill.py\tNot done: backfill shares the merged history on PR bodies without a history section\tFORGE-BOARD-2/BACKFILL",
+      "kind": "bug",
+      "path": "src/forge/backfill.py",
+      "line": 141,
+      "text": "Not done: backfill shares the merged history on PR bodies without a history section",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/BACKFILL",
+      "status": "done",
+      "closed_by": "dismissed"
+    },
+    {
+      "key": "bug\tsrc/forge/backfill.py\tNot done: rebuilt story history reaches the board\tFORGE-BOARD-2/BACKFILL",
+      "kind": "bug",
+      "path": "src/forge/backfill.py",
+      "line": 114,
+      "text": "Not done: rebuilt story history reaches the board",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/BACKFILL",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/backfill.py\tNot done: the exact 42-day cut\tFORGE-BOARD-2/BACKFILL",
+      "kind": "bug",
+      "path": "src/forge/backfill.py",
+      "line": 164,
+      "text": "Not done: the exact 42-day cut",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/BACKFILL",
+      "status": "open",
+      "closed_by": null
     },
     {
       "key": "bug\tsrc/forge/board.html\tMobile time-axis labels overlap\tFORGE-BOARD-2/RUNWAY",
@@ -1064,6 +1108,17 @@
       "text": "Not done: teammates see the current PR time record",
       "from": "blocking",
       "item": "FORGE-BOARD-2/RECORD",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/board.py\tNot done: the exact-cut item's rebuilt time is visible on the board\tFORGE-BOARD-2/BACKFILL",
+      "kind": "bug",
+      "path": "src/forge/board.py",
+      "line": 255,
+      "text": "Not done: the exact-cut item's rebuilt time is visible on the board",
+      "from": "blocking",
+      "item": "FORGE-BOARD-2/BACKFILL",
       "status": "open",
       "closed_by": null
     },
@@ -10414,6 +10469,17 @@
       "text": "The generated host coordinator skills already lag behind unrelated template guidance, which this fix leaves unchanged.",
       "from": "worker",
       "item": "runner-setting",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tdocs/specs/item-cost.md\tNot done: measured run coverage mixes rounds, attempts and items\titem-cost-spec",
+      "kind": "bug",
+      "path": "docs/specs/item-cost.md",
+      "line": 41,
+      "text": "Not done: measured run coverage mixes rounds, attempts and items",
+      "from": "blocking",
+      "item": "item-cost-spec",
       "status": "open",
       "closed_by": null
     }
