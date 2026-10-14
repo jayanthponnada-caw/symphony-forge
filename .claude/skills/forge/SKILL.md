@@ -330,6 +330,17 @@ progress (`id`, `title`, `kind`, `state`). `team.trends` counts merged pull requ
 (alphabetical, no totals or ranking), split into through Forge (a `story/`, `task/` or `fix/`
 branch) and around it; `team.around_forge` lists the ones merged around Forge in the last 7 days.
 Both are null without GitHub, and a week capped at 1,000 results is null.
+`team.needs_you` lists every item that waits on a person, oldest first, each with its `reason`,
+`since` and `waited_seconds`: `approval` (a plan waiting for approval), `review loop` (a review
+loop or stuck-worker choice), `worker question`, `conflict` (a merge conflict close stopped on),
+`merge` (a ready pull request a human merges) and `blocked plan`, with the question or the
+problem `forge next` reports in `detail`. Close and `forge work` publish
+these waits to the pull request, so every machine lists the same ones; answer a worker question
+with `forge work <item> --note` on any machine. `team.blocked` lists started parts and fixes
+idle 24 hours or more (`stalled`), reviews blocked three or more rounds in a row (`looping`) and
+the unfinished part the most unfinished parts wait on (`blocks the most`), longest first, each
+with `detail` and `seconds`. `team.sentence` counts both. Ask the human about each Needs you
+item as `forge next` words it.
 Active parts and fixes show recorded
 Build, Tests, Review, CI and Merge times for their current round, with the current stage
 marked. Missing times remain unknown. New clients get this at init; earlier adopted clients
@@ -347,7 +358,7 @@ Each row has `id`, `kind`, plain `title`, `stage`, `worker` (kind, model and
 `started_at`, or null), `pr` (number, url and checks: pass, fail, running or unknown),
 `findings` (count and titles), `round`, `stages`, `total_seconds`, `occurrences`,
 `approval`, `needs_person`, and its own `next`. `needs_person` is true while the item waits on
-a person: a plan waiting for approval, a stop nobody has answered, or a worker question.
+a person, by the same decision as `team.needs_you`.
 A story awaiting approval has `approval.doc`, the
 absolute path to its document in its own worktree; other rows have null approval.
 Task and fix rows add `time_breakdown` and `rounds`; story rows add `outcome` (null until done).
