@@ -683,17 +683,6 @@
       "closed_by": null
     },
     {
-      "key": "bug\tplans/spotted.json\tAn unrelated test-audit finding edits the shared spotted list\tFORGE-MAINONCE-1/ONCLASH",
-      "kind": "bug",
-      "path": "plans/spotted.json",
-      "line": 8440,
-      "text": "An unrelated test-audit finding edits the shared spotted list",
-      "from": "blocking",
-      "item": "FORGE-MAINONCE-1/ONCLASH",
-      "status": "open",
-      "closed_by": null
-    },
-    {
       "key": "bug\tplans/spotted.json\tStandard: Touch only what the task needs\tclaude-sonnet-default",
       "kind": "bug",
       "path": "plans/spotted.json",
@@ -6194,6 +6183,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\tsrc/forge/time_records.py\tCompacted rounds expose aggregate findings as individual round data\tFORGE-BOARD-3/ROUNDS",
+      "kind": "bug",
+      "path": "src/forge/time_records.py",
+      "line": 660,
+      "text": "Compacted rounds expose aggregate findings as individual round data",
+      "from": "blocking",
+      "item": "FORGE-BOARD-3/ROUNDS",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\tsrc/forge/time_records.py\tDeeply nested pull request records can crash board and next\tFORGE-BOARD-2/RECORD",
       "kind": "bug",
       "path": "src/forge/time_records.py",
@@ -6256,6 +6256,17 @@
       "text": "Not done: Current-round progress leaves the time record unbounded",
       "from": "blocking",
       "item": "pr-time-record-summaries",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tsrc/forge/time_records.py\tNot done: Each round records its full duration in the four time groups\tFORGE-BOARD-3/ROUNDS",
+      "kind": "bug",
+      "path": "src/forge/time_records.py",
+      "line": 24,
+      "text": "Not done: Each round records its full duration in the four time groups",
+      "from": "blocking",
+      "item": "FORGE-BOARD-3/ROUNDS",
       "status": "open",
       "closed_by": null
     },
@@ -8449,17 +8460,6 @@
       "closed_by": "dismissed"
     },
     {
-      "key": "bug\ttests/test_mod_guide.py\tNot done: proof list\ttest-audit-followups",
-      "kind": "bug",
-      "path": "tests/test_mod_guide.py",
-      "line": 37,
-      "text": "Not done: proof list",
-      "from": "blocking",
-      "item": "test-audit-followups",
-      "status": "open",
-      "closed_by": null
-    },
-    {
       "key": "bug\ttests/test_mod_install.py\tNot done: real installation, reload, and native-pane integration proof\tFORGE-MOD-1/SHIP",
       "kind": "bug",
       "path": "tests/test_mod_install.py",
@@ -9479,17 +9479,6 @@
       "text": "Preserve group descriptions for abbreviated help flags",
       "from": "review",
       "item": "every-forge-process-including-each-git-h",
-      "status": "open",
-      "closed_by": null
-    },
-    {
-      "key": "edge\tsrc/forge/close.py\tA pending whole-history retry can spend the API budget before close reaches its own pull request.",
-      "kind": "edge",
-      "path": "src/forge/close.py",
-      "line": 93,
-      "text": "A pending whole-history retry can spend the API budget before close reaches its own pull request.",
-      "from": "worker",
-      "item": "FORGE-MAINONCE-1/ONCLASH",
       "status": "open",
       "closed_by": null
     },
@@ -10627,6 +10616,17 @@
       "closed_by": null
     },
     {
+      "key": "bug\ttests/test_mod_guide.py\tNot done: proof list\ttest-audit-followups",
+      "kind": "bug",
+      "path": "tests/test_mod_guide.py",
+      "line": 37,
+      "text": "Not done: proof list",
+      "from": "blocking",
+      "item": "test-audit-followups",
+      "status": "open",
+      "closed_by": null
+    },
+    {
       "key": "bug\ttests/test_mod_install.py\tThe real Claude session misses its expected API-key prompt in the full suite but the focused run passes.",
       "kind": "bug",
       "path": "tests/test_mod_install.py",
@@ -10656,6 +10656,28 @@
       "text": "Not done: The scheduled forge-next run passes every Windows full-suite group on main, and each failing test passes on Windows for the real\u539f\u56e0",
       "from": "blocking",
       "item": "windows-nightly-red",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "bug\tplans/spotted.json\tAn unrelated test-audit finding edits the shared spotted list\tFORGE-MAINONCE-1/ONCLASH",
+      "kind": "bug",
+      "path": "plans/spotted.json",
+      "line": 8440,
+      "text": "An unrelated test-audit finding edits the shared spotted list",
+      "from": "blocking",
+      "item": "FORGE-MAINONCE-1/ONCLASH",
+      "status": "open",
+      "closed_by": null
+    },
+    {
+      "key": "edge\tsrc/forge/close.py\tA pending whole-history retry can spend the API budget before close reaches its own pull request.",
+      "kind": "edge",
+      "path": "src/forge/close.py",
+      "line": 93,
+      "text": "A pending whole-history retry can spend the API budget before close reaches its own pull request.",
+      "from": "worker",
+      "item": "FORGE-MAINONCE-1/ONCLASH",
       "status": "open",
       "closed_by": null
     }
